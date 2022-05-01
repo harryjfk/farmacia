@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="dispensacion-template" template="/WEB-INF/views/dispensacion/template/template.jsp" preparer="pe.gob.minsa.geniusplex.web.MenuPreparer">
+        <put-attribute name="meta" value="/WEB-INF/tiles/template_body/meta.jsp" />
+        <put-attribute name="head" value="/WEB-INF/tiles/template_body/head.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/tiles/template_body/menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/dispensacion/template/body.jsp" />
+        <put-attribute name="actions" value="/WEB-INF/views/dispensacion/template/actions.jsp" />
+        <put-attribute name="breadcrumb" value="/WEB-INF/tiles/template_body/breadcrumb.jsp" />
+        <put-attribute name="sidebar" value="/WEB-INF/tiles/template_body/sidebar.jsp" />
+        <put-attribute name="headScript" value="/WEB-INF/tiles/template_body/headScript.jsp" />
+        <put-attribute name="upper-content" value=""/>
+        <put-attribute name="modal-form" value=""/>
+        <put-attribute name="lower-content" value=""/>
+        <put-attribute name="basic-script" value="/WEB-INF/views/dispensacion/template/js/basic.js" />
+        <put-attribute name="custom-script" value="" />
+    </definition>
+    
+    <definition name="Cliente/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Listar Clientes"></put-attribute>
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/cliente/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/cliente/scripts.jsp" />
+    </definition>
+    <definition name="Prescriptor/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Listar Prescriptores"></put-attribute>
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/prescriptor/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/prescriptor/scripts.jsp" />
+    </definition>
+    <definition name="Vendedor/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Listar Vendedores"></put-attribute>
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/vendedor/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/vendedor/scripts.jsp" />
+    </definition>
+    <definition name="Turno/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Listar Turnos"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/turnos/upperContent.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/turnos/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/turnos/scripts.jsp" />
+    </definition>
+    <definition name="Receta/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Recetas Atendidas y no Atendidas"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/recetas/recetasUpper.jsp" />
+        <put-attribute name="lower-content" value="" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/recetas/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/recetas/recetaScript.jsp" />
+    </definition>
+    <definition name="Receta/consultar" extends="dispensacion-template">
+        <put-attribute name="title" value="Consultar Recetas Atendidas y no Atendidas"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/recetas/upperConsulta.jsp" />
+        <put-attribute name="lower-content" value="" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/recetas/scriptConsulta.jsp" />
+    </definition>
+    <definition name="KitAtencion/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Listar Kits Atencion"></put-attribute>
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/kitatencion/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/kitatencion/scripts.jsp" />
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/kitatencion/upperContent.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/dispensacion/kitatencion/body.jsp" />
+    </definition>
+    <definition name="DemandaInsatisfecha/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Listar Demandas Insatisfechas"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/demandaInsatisfecha/upper.jsp" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/demandaInsatisfecha/scripts.jsp" />
+    </definition>
+    <definition name="DemandaInsatisfecha/consultar" extends="dispensacion-template">
+        <put-attribute name="title" value="Consultar Demandas Insatisfechas"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/demandaInsatisfecha/upperConsulta.jsp" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/demandaInsatisfecha/scriptsConsulta.jsp" />
+    </definition>
+    <definition name="Intervencion/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Gestionar Intervenciones"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/intervencion/upperContent.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/intervencion/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/intervencion/scripts.jsp" />
+    </definition>
+    <definition name="CompraDeUrgencia/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Gestionar Compras de Urgencias"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/comprasdeurgencia/upperContent.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/comprasdeurgencia/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/comprasdeurgencia/scripts.jsp" />
+    </definition>
+    <definition name="Preventa/procesar" extends="dispensacion-template">
+        <put-attribute name="title" value="Gestionar Pre Ventas"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/preventa/upperContent.jsp" />
+        <put-attribute name="lower-content" value="/WEB-INF/views/dispensacion/preventa/lowerContent.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/preventa/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/preventa/scripts.jsp" />
+    </definition>    
+    <definition name="PreVenta/reportar" extends="dispensacion-template">
+        <put-attribute name="title" value="Consultar Pre Ventas"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/preventa/upperConsulta.jsp" />
+        <put-attribute name="lower-content" value="" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/preventa/scriptConsulta.jsp" />
+    </definition>    
+    <definition name="Venta/procesar" extends="dispensacion-template">
+        <put-attribute name="title" value="Gestionar Ventas"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/venta/upperContent.jsp" />
+        <put-attribute name="lower-content" value="/WEB-INF/views/dispensacion/venta/lowerContent.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/venta/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/venta/scripts.jsp" />
+    </definition>    
+    <definition name="Venta/reportar" extends="dispensacion-template">
+        <put-attribute name="title" value="Consultar Ventas"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/venta/upperConsulta.jsp" />
+        <put-attribute name="lower-content" value="" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/venta/scriptConsulta.jsp" />
+    </definition>    
+    <definition name="InventarioRutinario/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Inventario Rutinario"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/inventarioRutinario/upper.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/inventarioRutinario/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/inventarioRutinario/scripts.jsp" />
+    </definition>
+    <definition name="InventarioRutinario/consultar" extends="dispensacion-template">
+        <put-attribute name="title" value=" Consultar Inventario Rutinario"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/inventarioRutinario/upperConsultar.jsp" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/inventarioRutinario/scriptsConsultar.jsp" />
+    </definition>
+    <definition name="InventarioRutinario/consultardosis" extends="dispensacion-template">
+        <put-attribute name="title" value=" Consultar Inventario Rutinario"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/inventarioRutinario/upperConsultar.jsp" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/inventarioRutinario/scriptsConsultarDosis.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/dispensacion/inventarioRutinario/bodyConsultar.jsp" />
+    </definition>
+    <definition name="PracticasDispensacion/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Listar Buenas Práctics de Dispensación"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/practicasDispensacion/upper.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/practicasDispensacion/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/practicasDispensacion/scripts.jsp" />
+    </definition>
+    <definition name="PracticasDispensacion/consultar" extends="dispensacion-template">
+        <put-attribute name="title" value="Consultar Buenas Práctics de Dispensación"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/practicasDispensacion/upperConsulta.jsp" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/practicasDispensacion/scriptsConsulta.jsp" />
+    </definition>
+    <definition name="PracticasPrescripcion/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Listar Buenas Práctics de Dispensación"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/practicasPrescripcion/upperContent.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/practicasPrescripcion/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/practicasPrescripcion/scripts.jsp" />
+    </definition>
+    <definition name="PracticasPrescripcion/consultar" extends="dispensacion-template">
+        <put-attribute name="title" value="Consultar Buenas Práctics de Dispensación"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/practicasPrescripcion/upperConsulta.jsp" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/practicasPrescripcion/scriptsConsulta.jsp" />
+    </definition>
+    <definition name="IntervecionSanitaria/procesar" extends="dispensacion-template">
+        <put-attribute name="title" value="Procesar Salida por Estragtegias Sanitaria" />
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/intervsanitarias/upperContent.jsp" />
+        <put-attribute name="lower-content" value="/WEB-INF/views/dispensacion/intervsanitarias/lowerContent.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/intervsanitarias/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/intervsanitarias/scripts.jsp" />
+    </definition>
+    <definition name="CorteDeCaja/procesar" extends="dispensacion-template">
+        <put-attribute name="title" value="Corte de Caja" />
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/cortecaja/upperContent.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/cortecaja/scripts.jsp" />
+        <put-attribute name="lower-content" value="/WEB-INF/views/dispensacion/cortecaja/lowerContent.jsp" />
+    </definition>
+    <definition name="PuntoDeVenta/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Puntos de Venta" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/ptoventa/scripts.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/ptoventa/modalForm.jsp" />
+    </definition>
+    <definition name="NotaAbono/procesar" extends="dispensacion-template">
+        <put-attribute name="title" value="Notas de Abono"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/notaabono/upperContent.jsp" />
+        <put-attribute name="lower-content" value="/WEB-INF/views/dispensacion/notaabono/lowerContent.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/notaabono/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/notaabono/scripts.jsp" />
+    </definition>  
+    <definition name="CuentaCorriente/procesar" extends="dispensacion-template">
+        <put-attribute name="title" value="Cuentas Corrientes"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/cuentaCorriente/upperContent.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/cuentaCorriente/scripts.jsp" />
+    </definition>  
+    <definition name="RepStockPedido/procesar" extends="dispensacion-template">
+        <put-attribute name="title" value="Repocicion de Stocks o Pedidos"></put-attribute>
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/repStockPedido/scripts.jsp" />
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/repStockPedido/upperContent.jsp" />
+    </definition>  
+    <definition name="ConsumoPaciente/consulta" extends="dispensacion-template">
+        <put-attribute name="title" value="Comsumo por Paciente" />
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/consumoPaciente/upperContent.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/consumoPaciente/scripts.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/dispensacion/consumoPaciente/body.jsp" />
+        <put-attribute name="lower-content" value="" />
+    </definition>
+    <definition name="ConsumoSalida/consulta" extends="dispensacion-template">
+        <put-attribute name="title" value="Consumo por Tipo Salida" />
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/consumoSalida/upperContent.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/consumoSalida/scripts.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/dispensacion/consumoSalida/body.jsp" />
+        <put-attribute name="lower-content" value="" />
+    </definition>
+    <definition name="Intervencion/consulta" extends="dispensacion-template">
+        <put-attribute name="title" value="Consulta por Intervenciones" />
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/intervencion/upperConsulta.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/intervencion/scriptConsulta.jsp" />
+        <put-attribute name="lower-content" value="" />
+    </definition>
+    <definition name="DiagnosticoCie/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Mantenimiento de Diagnósticos CIE" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/diagnosticocie/scripts.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/diagnosticocie/modalForm.jsp" />
+    </definition>
+    <definition name="Componente/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Mantenimiento de Componentes" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/componente/scripts.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/componente/modalForm.jsp" />
+    </definition>
+    <definition name="SubComponente/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Mantenimiento de Sub Componentes" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/dispensacion/subcomponente/scripts.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/dispensacion/subcomponente/modalForm.jsp" />
+        <put-attribute name="lower-content" value="/WEB-INF/views/dispensacion/subcomponente/lowerContent.jsp" />
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/subcomponente/upperContent.jsp" />
+    </definition>
+    <definition name="Venta/ticket" template="/WEB-INF/views/dispensacion/template/ventaTicket.jsp">
+        <put-attribute name="content" value="/WEB-INF/views/dispensacion/venta/ticket.jsp" />
+    </definition>
+    <!--Esto debe ir en clinica pero el template de Clinica no sirve para esta vista-->
+    <definition name="Servicio/listar" extends="dispensacion-template">
+        <put-attribute name="title" value="Mantenimiento de Servicios"></put-attribute>
+        <put-attribute name="modal-form" value="/WEB-INF/views/clinica/servicio/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/clinica/servicio/scripts.jsp" />
+    </definition>
+    <definition name="response/error" extends="dispensacion-template">
+        <put-attribute name="title" value="Error" />
+        <put-attribute name="body" value="/WEB-INF/views/dispensacion/template/error.jsp" />
+        <put-attribute name="actions" value="" />
+    </definition>
+</tiles-definitions>

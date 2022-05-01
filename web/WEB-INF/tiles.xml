@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <definition name="template" template="/WEB-INF/tiles/template.jsp" preparer="pe.gob.minsa.farmacia.util.MenuPreparer">
+        <put-attribute name="meta" value="/WEB-INF/tiles/template_body/meta.jsp" />
+        <put-attribute name="head" value="/WEB-INF/tiles/template_body/head.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/tiles/template_body/menu.jsp" />        
+        <put-attribute name="breadcrumb" value="/WEB-INF/tiles/template_body/breadcrumb.jsp" />
+        <put-attribute name="sidebar" value="/WEB-INF/tiles/template_body/sidebar.jsp" />
+        <put-attribute name="headScript" value="/WEB-INF/tiles/template_body/headScript.jsp" />
+    </definition>
+    
+    <definition name="blank/welcome" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/blank/welcome.jsp" />        
+    </definition>
+    
+    <definition name="blank/profile" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/blank/profile.jsp" />        
+    </definition>
+    
+    <definition name="blank/error" template="/WEB-INF/views/blank/error.jsp">        
+    </definition>
+    
+    <definition name="index" template="/WEB-INF/views/index.jsp">        
+    </definition>
+    
+    <definition name="Modulo" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/Modulo/index.jsp" />
+    </definition>
+    
+    <definition name="Submodulo" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/Submodulo/index.jsp" />
+    </definition>
+    
+    <definition name="Menu" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/Menu/index.jsp" />
+    </definition>
+    
+    <definition name="Submenu" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/Submenu/index.jsp" />
+    </definition>
+    
+    <definition name="Perfil" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Perfil/index.jsp" />
+    </definition>
+    
+    <definition name="Usuario" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Usuario/index.jsp" />
+    </definition>
+    
+    <definition name="Usuario/registrar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Usuario/registrar.jsp" />
+    </definition>
+    
+    <definition name="Usuario/modificar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Usuario/modificar.jsp" />
+    </definition>
+        
+    <definition name="Opcion" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/Opcion/index.jsp" />
+    </definition>
+    
+    <definition name="PerfilOpcion" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/PerfilOpcion/index.jsp" />
+    </definition>
+    
+    <definition name="Parametro" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Parametro/index.jsp" />
+    </definition>
+    
+    <definition name="TipoAccion" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/TipoAccion/index.jsp" />
+    </definition>
+    
+    <definition name="TipoDocumento" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/TipoDocumento/index.jsp" />
+    </definition>
+    
+    <definition name="Documento" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Documento/index.jsp" />
+    </definition>
+    
+    <definition name="Documento/registrar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Documento/registrar.jsp" />
+    </definition>
+    
+    <definition name="Documento/modificar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Documento/modificar.jsp" />
+    </definition>
+    
+    <definition name="Despacho" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Documento/indexDespacho.jsp" />
+    </definition>
+    
+    <definition name="AlertaDocumentaria" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Documento/indexAlertDocumentaria.jsp" />
+    </definition>
+    
+    <definition name="ReporteDocumentos" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Documento/indexReporte.jsp" />
+    </definition>
+                
+    <definition name="DependenciaDestino" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/DependenciaDestino/index.jsp" />
+    </definition>
+
+    <definition name="ActualizacionCatalogo" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Proceso/actualizacionCatalogo.jsp" />
+    </definition>
+    
+    <definition name="AperturaPeriodo" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Proceso/aperturaPeriodo.jsp" />
+    </definition>    
+    
+    <definition name="ExportarTablas" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Reporte/exportarTablas.jsp" />
+    </definition>    
+
+    <definition name="AnulacionGuiaRemision" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Proceso/anulacionGuiaRemision.jsp" />
+    </definition>    
+    
+    <definition name="InterfaceSIGA" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/Reporte/interfaceSIGA.jsp" />
+    </definition>    
+
+    <definition name="InterfaceSISMED" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Reporte/interfaceSISMED.jsp" />
+    </definition>    
+
+    <definition name="ControlCalidad" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Reporte/controlCalidad.jsp" />
+    </definition>    
+
+    <definition name="EnvioInformacion" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Reporte/envioInformacion.jsp" />
+    </definition>    
+
+    <definition name="IndicadoresGestion" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/Reporte/indicadoresGestion.jsp" />
+    </definition>
+    
+    <definition name="Ubigeo" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Ubigeo/index.jsp" />
+    </definition>
+    
+    <definition name="TipoAlmacen" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/TipoAlmacen/index.jsp" />
+    </definition>
+    
+    <definition name="Concepto" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Concepto/index.jsp" />
+    </definition>
+	
+    <definition name="TipoCompra" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/TipoCompra/index.jsp" />
+    </definition>     
+        
+    <definition name="Almacen" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Almacen/index.jsp" />
+    </definition>
+    
+    <definition name="Almacen/registrar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Almacen/registrar.jsp" />
+    </definition>
+    
+    <definition name="Almacen/modificar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Almacen/modificar.jsp" />
+    </definition>
+    
+    <definition name="Almacen/subalmacen" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Almacen/subalmacen.jsp" />
+    </definition>
+    
+    <definition name="TipoProducto" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/TipoProducto/index.jsp" />
+    </definition>
+    
+    <definition name="UnidadMedida" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/UnidadMedida/index.jsp" />
+    </definition>
+    
+    <definition name="FormaFarmaceutica" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/FormaFarmaceutica/index.jsp" />
+    </definition>
+		
+    <definition name="Producto" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Producto/index.jsp" />
+    </definition>
+    
+    <definition name="Producto/registrar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Producto/registrar.jsp" />
+    </definition>
+    
+    <definition name="Producto/modificar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Producto/modificar.jsp" />
+    </definition>
+	
+    <definition name="Proveedor" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Proveedor/index.jsp" />
+    </definition>
+    
+    <definition name="Proveedor/registrar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Proveedor/registrar.jsp" />
+    </definition>
+    
+    <definition name="Proveedor/modificar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Proveedor/modificar.jsp" />
+    </definition>
+	
+    <definition name="Personal" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Personal/index.jsp" />
+    </definition>
+    
+    <definition name="TipoDocumentoMov" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/TipoDocumentoMov/index.jsp" />
+    </definition>
+	
+    <definition name="NotaIngreso" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/ingreso.jsp" />
+    </definition>
+    
+    <definition name="NotaIngreso/registrar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/ingresoRegistrar.jsp" />
+    </definition>
+    
+    <definition name="NotaIngreso/modificar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/ingresoModificar.jsp" />
+    </definition>
+    
+    <definition name="NotaIngreso/periodoNoValido" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/periodoNoValido.jsp" />
+    </definition>
+	
+    <definition name="NotaSalida" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/salida.jsp" />
+    </definition>
+    
+    <definition name="NotaSalida/registrar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/salidaRegistrar.jsp" />
+    </definition>
+    
+    <definition name="NotaSalida/modificar" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/salidaModificar.jsp" />
+    </definition>
+    
+    <definition name="Precio" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/precio.jsp" />
+    </definition>
+    
+    <definition name="Solicitud" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/Solicitud/index.jsp" />
+    </definition>
+    
+    <definition name="Solicitud/registrar" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/Solicitud/registrar.jsp" />
+    </definition>
+    
+    <definition name="Solicitud/modificar" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/Solicitud/modificar.jsp" />
+    </definition>
+    
+    <definition name="Balance" extends="template">        
+        <put-attribute name="body" value="/WEB-INF/views/Balance/index.jsp" />
+    </definition>
+    
+    <definition name="Balance/informe" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Balance/informe.jsp" />
+    </definition>
+    
+    <definition name="ConsumoHistorico" extends="template">  
+        <put-attribute name="body" value="/WEB-INF/views/Solicitud/consumohistorico.jsp" />
+    </definition>
+    
+    <definition name="MedicamentosAdquiridos" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Solicitud/medicamentos.jsp" />
+    </definition>
+    
+    <definition name="NoAprobados" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Solicitud/noaprobados.jsp" />
+    </definition>
+
+    <definition name="FormatoICI" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Formato/ici.jsp" />
+    </definition>
+    
+    <definition name="FormatoIDI" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Formato/idi.jsp" />
+    </definition>
+    
+    <definition name="FormatoIME" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Formato/ime.jsp" />
+    </definition>
+    
+    <definition name="ProductoSiga" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/ProductoSiga/index.jsp" />
+    </definition>
+    
+    <definition name="ProductoSismed" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/ProductoSismed/index.jsp" />
+    </definition>
+    
+    <definition name="DocumentoOrigen" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/DocumentoOrigen/index.jsp" />
+    </definition>
+    
+    <definition name="TipoProceso" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/TipoProceso/index.jsp" />
+    </definition>    
+    
+    <definition name="Movimiento" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/index.jsp" />
+    </definition>
+    
+    <definition name="StockGeneralProductos" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/stockGeneralProductos.jsp" />
+    </definition>
+    
+    <definition name="StockProductoFecha" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/stockProductoAFecha.jsp" />
+    </definition>
+    
+    <definition name="ProductosVencimiento" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Producto/productosVencimiento.jsp" />
+    </definition>
+    
+    <definition name="ProductosStockMinimo" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Producto/productosStockMinimo.jsp" />
+    </definition>
+    
+    <definition name="TarjetaControlVisible" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/tarjetaControlVisible.jsp" />
+    </definition>
+    
+    <definition name="ProductosIngresados" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Movimiento/productosIngresados.jsp" />
+    </definition>      
+
+    <definition name="Inventario" extends="template">
+        <put-attribute name="body" value="/WEB-INF/views/Inventario/index.jsp" />
+    </definition>
+
+</tiles-definitions>

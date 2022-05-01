@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+ 
+    <bean id="ClienteExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.ClienteExcel">
+    </bean>
+    <bean id="TurnoExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.TurnoExcel">
+    </bean>
+   
+    <bean id="PrescriptorExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.PrescriptorExcel">
+    </bean>
+    <bean id="VendedorExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.VendedorExcel">
+    </bean>
+    <bean id="KitAtencionExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.KitAtencionExcel">
+    </bean>
+    <bean id="IntervencionExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.IntervencionExcel">
+    </bean>
+    <bean id="CompraDeUrgenciaExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.CompraUrgenciaExcel">
+
+    </bean>
+    <bean id="DemandaInsatisfechaExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.DemandaInsatisfechaExcel" ></bean>
+
+    <bean id="IntervSalidaExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.IntervSalidaExcel"></bean>
+    <bean id="PracticasDispensacionExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="InventarioRutinarioExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="VentaExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="PreVentaExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="NotaAbonoExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="VentaConsultaExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="PreVentaConsultaExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="IntervencionConsultaExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="CorteCajaExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.CorteCajaExcel"></bean>
+    <bean id="FCorteCajaExcel" class="pe.gob.minsa.geniusplex.farmacia.farmacotecnia.viewExcel.CorteCajaExcel"></bean>
+    <bean id="ConsumoPacienteExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.ConsumoExcel"></bean>
+    <bean id="ConsumoSalidaExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.ConsumoExcel"></bean>
+    <bean id="PRMExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="PRMConsulta" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="MedidaExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="HFTExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="DocumentosExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="DevolucionExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="FarmacotecniaIngresosExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="ConsumoPromedioMensualExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="CuentaCorrienteExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="PuntoDeVentaExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="SubComponenteExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="ComponenteExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="GenericExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.GenericExcel"></bean>
+    <bean id="RAMExcel" class="pe.gob.minsa.geniusplex.farmacia.dispensacion.viewExcel.RAMExcel"></bean>
+    <bean id="TCVExcel" class="pe.gob.minsa.geniusplex.farmacia.farmacotecnia.viewExcel.TarjetaControlVisibleExcel"></bean>
+ 
+</beans>

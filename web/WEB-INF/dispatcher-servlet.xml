@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+    <context:annotation-config />
+    <mvc:annotation-driven />
+    <mvc:interceptors>
+        <bean class="pe.gob.minsa.farmacia.util.InterceptorSecurity">
+        </bean>
+    </mvc:interceptors> 
+    <context:component-scan base-package="pe.gob.minsa.farmacia pe.gob.minsa.geniusplex.farmacia" />
+    
+    <!-- Tiles utiliza otra forma de controlar las vistas, para ello se desactiva la forma tradicional.
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    -->
+        
+    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+    </bean>
+
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+            <value>/WEB-INF/tiles.xml</value>
+            <value>/WEB-INF/tiles-dispensacion.xml</value>
+            <value>/WEB-INF/tiles-clinica.xml</value>
+            <value>/WEB-INF/tiles-farmacotecnia.xml</value>
+            </list>
+        </property>
+        <property name="preparerFactoryClass" value="org.springframework.web.servlet.view.tiles3.SimpleSpringPreparerFactory" />
+    </bean>
+    
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="location">
+            <value>/WEB-INF/spring-pdf-views.xml</value>          
+        </property>
+    </bean>
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="location">
+            <value>/WEB-INF/spring-dispensacion-pdf-views.xml</value>
+        </property>
+    </bean>
+    
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="location">
+            <value>/WEB-INF/spring-excel-views.xml</value>
+        </property>
+    </bean>
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="location">
+            <value>/WEB-INF/spring-dispensacion-excel-views.xml</value>
+        </property>
+    </bean>
+        
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="mail.savperu.com" />
+        <property name="port" value="25" />
+        <property name="username" value="sistemas@savperu.com" />
+        <property name="password" value="$Sav2010" />
+
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+            </props>
+        </property>
+    </bean>
+ 
+    <bean id="utilMail" class="pe.gob.minsa.farmacia.util.UtilMail">
+        <property name="mailSender" ref="mailSender" />
+    </bean>
+ 
+    <bean id="mensajeRecordarUsuario"
+          class="org.springframework.mail.SimpleMailMessage">
+        
+        <property name="subject" value="Datos de Acceso al Software de Farmacia - MINAM" />
+        <property name="text">
+            <value>
+                    <![CDATA[
+                    Le recordamos sus datos de acceso:
+                    Usuario: %s
+                    Clave: %s
+                    ]]>
+            </value>
+        </property>
+    </bean>
+    
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+ 
+        <!-- setting maximum upload size 
+        <property name="maxUploadSize" value="100000" />-->
+ 
+    </bean>
+    
+    <!-- declare controlles-->
+    <bean id="documentoController" class="pe.gob.minsa.farmacia.controller.DocumentoController" >
+        <property name="tamanioDocumento" value="1024"/>
+        <property name="rutaDocumentos" value="/WEB-INF/views/Documento/archivos" />
+    </bean>
+    <bean id="solicitudController" class="pe.gob.minsa.farmacia.controller.SolicitudController" >
+        <property name="tamanioDocumento" value="1024"/>
+        <property name="rutaDocumentos" value="/WEB-INF/views/Solicitud/archivos" />
+    </bean>
+    <bean id="documentosController" class="pe.gob.minsa.geniusplex.farmacia.clinica.controller.DocumentosController" >
+        <property name="tamanioDocumento" value="1024"/>
+        <property name="rutaDocumentos" value="/WEB-INF/documentos" />
+    </bean>
+    
+    <!-- declare beans-->
+    <bean id="usuarioDao" class="pe.gob.minsa.farmacia.dao.impl.UsuarioDao" />        
+    <bean id="usuarioService" class="pe.gob.minsa.farmacia.services.impl.UsuarioService" />    
+    <bean id="perfilDao" class="pe.gob.minsa.farmacia.dao.impl.PerfilDao" />
+    <bean id="perfilService" class="pe.gob.minsa.farmacia.services.impl.PerfilService" />
+    <bean id="parametroDao" class="pe.gob.minsa.farmacia.dao.impl.ParametroDao" />
+    <bean id="parametroService" class="pe.gob.minsa.farmacia.services.impl.ParametroService" />
+    <bean id="moduloDao" class="pe.gob.minsa.farmacia.dao.impl.ModuloDao" />
+    <bean id="moduloService" class="pe.gob.minsa.farmacia.services.impl.ModuloService" />
+    <bean id="SubmoduloDao" class="pe.gob.minsa.farmacia.dao.impl.SubmoduloDao" />
+    <bean id="SubmoduloService" class="pe.gob.minsa.farmacia.services.impl.SubmoduloService" />
+    <bean id="menuDao" class="pe.gob.minsa.farmacia.dao.impl.MenuDao" />
+    <bean id="menuService" class="pe.gob.minsa.farmacia.services.impl.MenuService" />
+    <bean id="submenuDao" class="pe.gob.minsa.farmacia.dao.impl.SubmenuDao" />
+    <bean id="submenuService" class="pe.gob.minsa.farmacia.services.impl.SubmenuService" />
+    <bean id="opcionDao" class="pe.gob.minsa.farmacia.dao.impl.OpcionDao" />
+    <bean id="opcionService" class="pe.gob.minsa.farmacia.services.impl.OpcionService" />
+    <bean id="perfilOpcionDao" class="pe.gob.minsa.farmacia.dao.impl.PerfilOpcionDao" />
+    <bean id="perfilOpcionService" class="pe.gob.minsa.farmacia.services.impl.PerfilOpcionService" />
+    <bean id="personalDao" class="pe.gob.minsa.farmacia.dao.impl.PersonalDao" />
+    <bean id="personalService" class="pe.gob.minsa.farmacia.services.impl.PersonalService" />
+    <bean id="usuarioPerfilDao" class="pe.gob.minsa.farmacia.dao.impl.UsuarioPerfilDao" />
+    <bean id="usuarioPerfilService" class="pe.gob.minsa.farmacia.services.impl.UsuarioPerfilService" />
+    <bean id="tipoAccionDao" class="pe.gob.minsa.farmacia.dao.impl.TipoAccionDao" />
+    <bean id="tipoAccionService" class="pe.gob.minsa.farmacia.services.impl.TipoAccionService" />
+    <bean id="tipoDocumentoDao" class="pe.gob.minsa.farmacia.dao.impl.TipoDocumentoDao" />
+    <bean id="tipoDocumentoService" class="pe.gob.minsa.farmacia.services.impl.TipoDocumentoService" />    
+    <bean id="documentoDao" class="pe.gob.minsa.farmacia.dao.impl.DocumentoDao" />
+    <bean id="documentoService" class="pe.gob.minsa.farmacia.services.impl.DocumentoService" />
+    <bean id="tipoAlmacenDao" class="pe.gob.minsa.farmacia.dao.impl.TipoAlmacenDao" />
+    <bean id="tipoAlmacenService" class="pe.gob.minsa.farmacia.services.impl.TipoAlmacenService" />
+    <bean id="tipoUbigeoDao" class="pe.gob.minsa.farmacia.dao.impl.UbigeoDao" />
+    <bean id="tipoUbigeoService" class="pe.gob.minsa.farmacia.services.impl.UbigeoService" />
+    <bean id="conceptoDao" class="pe.gob.minsa.farmacia.dao.impl.ConceptoDao" />
+    <bean id="conceptoService" class="pe.gob.minsa.farmacia.services.impl.ConceptoService" />
+    <bean id="documentoOrigenDao" class="pe.gob.minsa.farmacia.dao.impl.DocumentoOrigenDao" />
+    <bean id="documentoOrigenService" class="pe.gob.minsa.farmacia.services.impl.DocumentoOrigenService" />
+    <bean id="tipoCompraDao" class="pe.gob.minsa.farmacia.dao.impl.TipoCompraDao" />
+    <bean id="tipoCompraService" class="pe.gob.minsa.farmacia.services.impl.TipoCompraService" />
+    <bean id="tipoProcesoDao" class="pe.gob.minsa.farmacia.dao.impl.TipoProcesoDao" />
+    <bean id="tipoProcesoService" class="pe.gob.minsa.farmacia.services.impl.TipoProcesoService" />
+    <bean id="almacenDao" class="pe.gob.minsa.farmacia.dao.impl.AlmacenDao" />
+    <bean id="almacenService" class="pe.gob.minsa.farmacia.services.impl.AlmacenService" />    
+    <bean id="tipoProductoDao" class="pe.gob.minsa.farmacia.dao.impl.TipoProductoDao" />
+    <bean id="tipoProductoService" class="pe.gob.minsa.farmacia.services.impl.TipoProductoService" />
+    <bean id="unidadMedidaDao" class="pe.gob.minsa.farmacia.dao.impl.UnidadMedidaDao" />
+    <bean id="unidadMedidaService" class="pe.gob.minsa.farmacia.services.impl.UnidadMedidaService" />
+    <bean id="formaFarmaceuticaDao" class="pe.gob.minsa.farmacia.dao.impl.FormaFarmaceuticaDao" />
+    <bean id="formaFarmaceuticaService" class="pe.gob.minsa.farmacia.services.impl.FormaFarmaceuticaService" />
+    <bean id="proveedorDao" class="pe.gob.minsa.farmacia.dao.impl.ProveedorDao" />
+    <bean id="proveedorService" class="pe.gob.minsa.farmacia.services.impl.ProveedorService" />
+    <bean id="productoDao" class="pe.gob.minsa.farmacia.dao.impl.ProductoDao" />
+    <bean id="productoService" class="pe.gob.minsa.farmacia.services.impl.ProductoService" />
+    <bean id="tipoDocumentoMovDao" class="pe.gob.minsa.farmacia.dao.impl.TipoDocumentoMovDao" />
+    <bean id="tipoDocumentoMovService" class="pe.gob.minsa.farmacia.services.impl.TipoDocumentoMovService" />
+    <bean id="movimientoDao" class="pe.gob.minsa.farmacia.dao.impl.MovimientoDao" />
+    <bean id="movimientoService" class="pe.gob.minsa.farmacia.services.impl.MovimientoService" />
+    <bean id="periodoDao" class="pe.gob.minsa.farmacia.dao.impl.PeriodoDao" />
+    <bean id="periodoService" class="pe.gob.minsa.farmacia.services.impl.PeriodoService" />
+    <bean id="movimientoProductoDao" class="pe.gob.minsa.farmacia.dao.impl.MovimientoProductoDao" />
+    <bean id="movimientoProductoService" class="pe.gob.minsa.farmacia.services.impl.MovimientoProductoService" />    
+    <bean id="productoSigaDao" class="pe.gob.minsa.farmacia.dao.impl.ProductoSigaDao" />
+    <bean id="productoSigaService" class="pe.gob.minsa.farmacia.services.impl.ProductoSigaService" />
+    <bean id="productoSismedDao" class="pe.gob.minsa.farmacia.dao.impl.ProductoSismedDao" />
+    <bean id="productoSismedService" class="pe.gob.minsa.farmacia.services.impl.ProductoSismedService" />
+    <bean id="solicitudDao" class="pe.gob.minsa.farmacia.dao.impl.SolicitudDao" />
+    <bean id="solicitudService" class="pe.gob.minsa.farmacia.services.impl.SolicitudService" />
+    <bean id="solicitudDetalleDao" class="pe.gob.minsa.farmacia.dao.impl.SolicitudDetalleDao" />
+    <bean id="solicitudDetalleService" class="pe.gob.minsa.farmacia.services.impl.SolicitudDetalleService" />
+    <bean id="iciDetalleDao" class="pe.gob.minsa.farmacia.dao.impl.IciDetalleDao" />
+    <bean id="iciDetalleService" class="pe.gob.minsa.farmacia.services.impl.IciDetalleService" />
+    <bean id="iciDao" class="pe.gob.minsa.farmacia.dao.impl.IciDao" />
+    <bean id="iciService" class="pe.gob.minsa.farmacia.services.impl.IciService" />
+    
+    <bean id="idiDetalleDao" class="pe.gob.minsa.farmacia.dao.impl.IdiDetalleDao" />
+    <bean id="idiDetalleService" class="pe.gob.minsa.farmacia.services.impl.IdiDetalleService" />
+    <bean id="idiDao" class="pe.gob.minsa.farmacia.dao.impl.IdiDao" />
+    <bean id="idiService" class="pe.gob.minsa.farmacia.services.impl.IdiService" />
+    <bean id="tipoSuministroService" class="pe.gob.minsa.farmacia.services.impl.TipoSuministroService" />
+    <bean id="tipoSuministroDao" class="pe.gob.minsa.farmacia.dao.impl.TipoSuministroDao" />
+    
+    <bean id="unidadDao" class="pe.gob.minsa.farmacia.dao.impl.UnidadDao" />
+    <bean id="unidadService" class="pe.gob.minsa.farmacia.services.impl.UnidadService" />
+    
+    <bean id="inventarioDao" class="pe.gob.minsa.farmacia.dao.impl.InventarioDao" />
+    <bean id="inventarioService" class="pe.gob.minsa.farmacia.services.impl.InventarioService" />
+    <bean id="inventarioProductoDao" class="pe.gob.minsa.farmacia.dao.impl.InventarioProductoDao" />
+    <bean id="inventarioProductoService" class="pe.gob.minsa.farmacia.services.impl.InventarioProductoService" />
+    <bean id="productoPrecioDao" class="pe.gob.minsa.farmacia.dao.impl.ProductoPrecioDao" />
+    <bean id="productoPrecioService" class="pe.gob.minsa.farmacia.services.impl.ProductoPrecioService" />
+    <bean id="ubigeoService" class="pe.gob.minsa.farmacia.services.impl.UbigeoService"/>
+    <bean id="conceptoDocumentoOrigenDao" class="pe.gob.minsa.farmacia.dao.impl.ConceptoDocumentoOrigenDao" />
+    <bean id="conceptoDocumentoOrigenService" class="pe.gob.minsa.farmacia.services.impl.ConceptoDocumentoOrigenService" />
+    <bean id="conceptoTipoDocumentoMovDao" class="pe.gob.minsa.farmacia.dao.impl.ConceptoTipoDocumentoMovDao" />
+    <bean id="conceptoTipoDocumentoMovService" class="pe.gob.minsa.farmacia.services.impl.ConceptoTipoDocumentoMovService" />
+    <bean id="imeDao" class="pe.gob.minsa.farmacia.dao.impl.ImeDao"/>
+    <bean id="imeService" class="pe.gob.minsa.farmacia.services.impl.ImeService"/>
+    <bean id="ime_iiiDao" class="pe.gob.minsa.farmacia.dao.impl.Ime_IIIDao"/>
+    <bean id="ime_iiiService" class="pe.gob.minsa.farmacia.services.impl.Ime_IIIService"/>
+    
+    
+    <!--<bean id="selectJdbcTag" class="pe.gob.minsa.farmacia.controlUI.SelectJdbcTag" />-->
+     
+    <!-- declare datasource bean -->
+    
+    <import resource="dispensacion-servlet.xml" />
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>        
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <context:property-placeholder location="/WEB-INF/jdbc.properties"/>    
+ 
+</beans>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+ 
+    <bean id="PerfilExcel" class="pe.gob.minsa.farmacia.viewExcel.PerfilExcel" />
+    <bean id="TipoAccionExcel" class="pe.gob.minsa.farmacia.viewExcel.TipoAccionExcel" />
+    <bean id="TipoDocumentoExcel" class="pe.gob.minsa.farmacia.viewExcel.TipoDocumentoExcel" />
+    <bean id="DocumentoExcel" class="pe.gob.minsa.farmacia.viewExcel.DocumentoExcel" />
+    <bean id="TipoAlmacenExcel" class="pe.gob.minsa.farmacia.viewExcel.TipoAlmacenExcel" />
+    <bean id="ConceptoExcel" class="pe.gob.minsa.farmacia.viewExcel.ConceptoExcel" />
+    <bean id="TipoCompraExcel" class="pe.gob.minsa.farmacia.viewExcel.TipoCompraExcel" />
+    <bean id="UbigeoExcel" class="pe.gob.minsa.farmacia.viewExcel.UbigeoExcel">
+        <property name="ubigeoService" ref="ubigeoService" />
+    </bean>
+    <bean id="AlmacenExcel" class="pe.gob.minsa.farmacia.viewExcel.AlmacenExcel" >
+        <property name="almacenService" ref="almacenService" />
+    </bean>
+    <bean id="TipoProductoExcel" class="pe.gob.minsa.farmacia.viewExcel.TipoProductoExcel" />
+    <bean id="UnidadMedidaExcel" class="pe.gob.minsa.farmacia.viewExcel.UnidadMedidaExcel" />
+    <bean id="FormaFarmaceuticaExcel" class="pe.gob.minsa.farmacia.viewExcel.FormaFarmaceuticaExcel" />
+    <bean id="ProveedorExcel" class="pe.gob.minsa.farmacia.viewExcel.ProveedorExcel" />
+    <bean id="ProductoExcel" class="pe.gob.minsa.farmacia.viewExcel.ProductoExcel" />
+    <bean id="TipoDocumentoMovExcel" class="pe.gob.minsa.farmacia.viewExcel.TipoDocumentoMovExcel" />
+    <bean id="ParametroExcel" class="pe.gob.minsa.farmacia.viewExcel.ParametroExcel"/>
+    <bean id="DependenciaDestinoExcel" class="pe.gob.minsa.farmacia.viewExcel.DependenciaDestinoExcel"/>
+    <bean id="DespachoExcel" class="pe.gob.minsa.farmacia.viewExcel.DespachoExcel"/>
+    <bean id="AlertaDocumentariaExcel" class="pe.gob.minsa.farmacia.viewExcel.AlertaDocumentariaExcel"/>
+    <bean id="ReporteDocumentosExcel" class="pe.gob.minsa.farmacia.viewExcel.ReporteDocumentosExcel"/>
+    <bean id="IciExcel" class="pe.gob.minsa.farmacia.viewExcel.IciExcel"/>
+    <bean id="IdiExcel" class="pe.gob.minsa.farmacia.viewExcel.IdiExcel"/>
+    <bean id="ImeExcel" class="pe.gob.minsa.farmacia.viewExcel.ImeExcel"/>    
+    <bean id="IngresoExcel" class="pe.gob.minsa.farmacia.viewExcel.IngresoExcel"/>
+    <bean id="SalidaExcel" class="pe.gob.minsa.farmacia.viewExcel.SalidaExcel"/>
+    
+    <bean id="ProductoSigaExcel" class="pe.gob.minsa.farmacia.viewExcel.ProductoSigaExcel"/>
+    <bean id="ProductoSismedExcel" class="pe.gob.minsa.farmacia.viewExcel.ProductoSismedExcel"/>
+    
+    <bean id="DocumentoOrigenExcel" class="pe.gob.minsa.farmacia.viewExcel.DocumentoOrigenExcel"/>
+    <bean id="TipoProcesoExcel" class="pe.gob.minsa.farmacia.viewExcel.TipoProcesoExcel"/>
+    <bean id="MovimientoExcel" class="pe.gob.minsa.farmacia.viewExcel.MovimientoExcel"/>
+    <bean id="TarjetaControlVisibleExcel" class="pe.gob.minsa.farmacia.viewExcel.TarjetaControlVisibleExcel"/>
+    <bean id="StockGeneralProductoExcel" class="pe.gob.minsa.farmacia.viewExcel.StockGeneralProductoExcel"/>
+    <bean id="StockProductoFechaExcel" class="pe.gob.minsa.farmacia.viewExcel.StockProductoFechaExcel"/>
+    <bean id="ProductoPrecioExcel" class="pe.gob.minsa.farmacia.viewExcel.ProductoPrecioExcel"/>
+    <bean id="InventarioExcel" class="pe.gob.minsa.farmacia.viewExcel.InventarioExcel"/>    
+    <bean id="IngresoAlmacenExcel" class="pe.gob.minsa.farmacia.viewExcel.IngresoAlmacenExcel"/>
+    <bean id="ProductosVencimientoExcel" class="pe.gob.minsa.farmacia.viewExcel.ProductosVencimientoExcel"/>
+    <bean id="ProductosStockMinimoExcel" class="pe.gob.minsa.farmacia.viewExcel.ProductosStockMinimoExcel"/>
+</beans>

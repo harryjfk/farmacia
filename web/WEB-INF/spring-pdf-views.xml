@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+ 
+   <bean id="PerfilPDF" class="pe.gob.minsa.farmacia.viewPdf.PerfilPDF" />
+   <bean id="TipoAccionPDF" class="pe.gob.minsa.farmacia.viewPdf.TipoAccionPDF" />
+   <bean id="TipoDocumentoPDF" class="pe.gob.minsa.farmacia.viewPdf.TipoDocumentoPDF" />
+   <bean id="DocumentoPDF" class="pe.gob.minsa.farmacia.viewPdf.DocumentoPDF" />
+   <bean id="TipoAlmacenPDF" class="pe.gob.minsa.farmacia.viewPdf.TipoAlmacenPDF" />
+   <bean id="ConceptoPDF" class="pe.gob.minsa.farmacia.viewPdf.ConceptoPDF" />
+   <bean id="TipoCompraPDF" class="pe.gob.minsa.farmacia.viewPdf.TipoCompraPDF" />
+   <bean id="UbigeoPDF" class="pe.gob.minsa.farmacia.viewPdf.UbigeoPDF">
+       <property name="ubigeoService" ref="ubigeoService" />       
+   </bean>
+   <bean id="AlmacenPDF" class="pe.gob.minsa.farmacia.viewPdf.AlmacenPDF" >
+       <property name="almacenService" ref="almacenService" />       
+   </bean>
+   <bean id="TipoProductoPDF" class="pe.gob.minsa.farmacia.viewPdf.TipoProductoPDF" />
+   <bean id="UnidadMedidaPDF" class="pe.gob.minsa.farmacia.viewPdf.UnidadMedidaPDF" />
+   <bean id="FormaFarmaceuticaPDF" class="pe.gob.minsa.farmacia.viewPdf.FormaFarmaceuticaPDF" />
+   <bean id="ProveedorPDF" class="pe.gob.minsa.farmacia.viewPdf.ProveedorPDF" />
+   <bean id="ProductoPDF" class="pe.gob.minsa.farmacia.viewPdf.ProductoPDF" />
+   <bean id="TipoDocumentoMovPDF" class="pe.gob.minsa.farmacia.viewPdf.TipoDocumentoMovPDF" />
+   <bean id="ParametroPDF" class="pe.gob.minsa.farmacia.viewPdf.ParametroPDF"/>
+   <bean id="DependenciaDestinoPDF" class="pe.gob.minsa.farmacia.viewPdf.DependenciaDestinoPDF"/>
+   <bean id="DespachoPDF" class="pe.gob.minsa.farmacia.viewPdf.DespachoPDF"/>
+   <bean id="AlertaDocumentariaPDF" class="pe.gob.minsa.farmacia.viewPdf.AlertaDocumentariaPDF"/>
+   <bean id="ReporteDocumentosPDF" class="pe.gob.minsa.farmacia.viewPdf.ReporteDocumentosPDF"/>
+   <bean id="NotaIngresoPDF" class="pe.gob.minsa.farmacia.viewPdf.NotaIngresoPDF"/>
+   <bean id="NotaSalidaPDF" class="pe.gob.minsa.farmacia.viewPdf.NotaSalidaPDF"/>   
+   <bean id="IngresoPDF" class="pe.gob.minsa.farmacia.viewPdf.IngresoPDF"/>
+   <bean id="SalidaPDF" class="pe.gob.minsa.farmacia.viewPdf.SalidaPDF"/>
+   
+   <bean id="ProductoSismedPDF" class="pe.gob.minsa.farmacia.viewPdf.ProductoSismedPDF"/>
+   <bean id="ProductoSigaPDF" class="pe.gob.minsa.farmacia.viewPdf.ProductoSigaPDF"/>
+   <bean id="AlmacenAllPDF" class="pe.gob.minsa.farmacia.viewPdf.AlmacenAllPDF"/>
+   
+   <bean id="FormatoImePDF" class="pe.gob.minsa.farmacia.viewPdf.FormatoImePDF"/>
+   <bean id="DocumentoOrigenPDF" class="pe.gob.minsa.farmacia.viewPdf.DocumentoOrigenPDF"/>
+   <bean id="TipoProcesoPDF" class="pe.gob.minsa.farmacia.viewPdf.TipoProcesoPDF"/>
+   <bean id="MovimientoPDF" class="pe.gob.minsa.farmacia.viewPdf.MovimientoPDF"/>
+   <bean id="TarjetaControlVisiblePDF" class="pe.gob.minsa.farmacia.viewPdf.TarjetaControlVisiblePDF"/>
+   <bean id="StockGeneralProductoPDF" class="pe.gob.minsa.farmacia.viewPdf.StockGeneralProductoPDF"/>
+   <bean id="StockProductoFechaPDF" class="pe.gob.minsa.farmacia.viewPdf.StockProductoFechaPDF"/>
+   <bean id="ProductoPrecioPDF" class="pe.gob.minsa.farmacia.viewPdf.ProductoPrecioPDF"/>
+   <bean id="InventarioPDF" class="pe.gob.minsa.farmacia.viewPdf.InventarioPDF"/>    
+   <bean id="IngresoAlmacenPDF" class="pe.gob.minsa.farmacia.viewPdf.IngresoAlmacenPDF"/>
+   <bean id="ProductosVencimientoPDF" class="pe.gob.minsa.farmacia.viewPdf.ProductosVencimientoPDF"/>
+   <bean id="ProductosStockMinimoPDF" class="pe.gob.minsa.farmacia.viewPdf.ProductosStockMinimoPDF"/>   
+</beans>

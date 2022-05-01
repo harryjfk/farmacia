@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="farmaciaPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.Prescriptor</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.Vendedor</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.Turno</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.Componente</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.KitAtencion</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.Proceso</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.SubComponente</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.Receta</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.gf.domain.GpAlmacen</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.gf.domain.GpFormaFarmaceutica</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.gf.domain.GpProducto</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.gf.domain.GpTipoAlmacen</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.gf.domain.GpTipoProducto</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.gf.domain.GpUbigeo</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.gf.domain.GpUnidadMedida</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.gf.domain.GpTipoDocumento</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.RecetaProducto</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.KitAtencionProducto</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.DemandaInsatisfecha</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.PuntoDeVenta</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.IntervProducto</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.Intervencion</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.gf.domain.GpProductoSIGA</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.gf.domain.GpProductoSISMED</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.CompraDeUrgencia</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.CompraUrgenciaProducto</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.DiagnosticoCIE</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.FormaPago</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.SesionCaja</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.Venta</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.VentaProducto</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.gf.domain.GpParametro</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.InventarioRutinario</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.PracticaDispensacion</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.clinica.domain.HFT</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.clinica.domain.MedidasEducativas</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.clinica.domain.Devolucion</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.clinica.domain.HFTMedicamento</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.clinica.domain.PRM</class>
+    <class>pe.gob.minsa.geniusplex.farmacia.clinica.domain.UploadFile</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <!--<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://SEKAINEW-NNB;databaseName=Farmacia"/>
+      <property name="javax.persistence.jdbc.password" value="1234"/>-->
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://USER-HP\SQL12;databaseName=Farmacia"/>
+      <property name="javax.persistence.jdbc.password" value="$Sav2010"/>
+      <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+      <property name="javax.persistence.jdbc.user" value="sa"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="hospitalPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>pe.gob.minsa.geniusplex.farmacia.dispensacion.domain.Paciente</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <!--<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://SEKAINEW-NNB;databaseName=HVitarteBD"/>
+      <property name="javax.persistence.jdbc.password" value="1234"/>-->
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://USER-HP\SQL12;databaseName=HVitarteBD"/>
+      <property name="javax.persistence.jdbc.password" value="$Sav2010"/>
+      <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+      <property name="javax.persistence.jdbc.user" value="sa"/>
+    </properties>
+  </persistence-unit>
+</persistence>

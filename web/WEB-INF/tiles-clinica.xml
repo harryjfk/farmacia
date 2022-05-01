@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="clinica-template" template="/WEB-INF/views/dispensacion/template/template.jsp" preparer="pe.gob.minsa.geniusplex.web.MenuPreparer">
+        <put-attribute name="meta" value="/WEB-INF/tiles/template_body/meta.jsp" />
+        <put-attribute name="head" value="/WEB-INF/tiles/template_body/head.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/tiles/template_body/menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/dispensacion/template/body.jsp" />
+        <put-attribute name="actions" value="/WEB-INF/views/dispensacion/template/actions.jsp" />
+        <put-attribute name="breadcrumb" value="/WEB-INF/tiles/template_body/breadcrumb.jsp" />
+        <put-attribute name="sidebar" value="/WEB-INF/tiles/template_body/sidebar.jsp" />
+        <put-attribute name="headScript" value="/WEB-INF/tiles/template_body/headScript.jsp" />
+        <put-attribute name="upper-content" value=""/>
+        <put-attribute name="modal-form" value=""/>
+        <put-attribute name="lower-content" value=""/>
+        <put-attribute name="basic-script" value="/WEB-INF/views/dispensacion/template/js/basic.js" />
+        <put-attribute name="custom-script" value="" />
+    </definition>
+    
+    <definition name="HFT/procesar" extends="clinica-template">
+        <put-attribute name="title" value="Procesar Hoja Farmacoterapeutica"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/clinica/hft/hftUpper.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/clinica/hft/hftModalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/clinica/hft/hftScripts.jsp" />
+    </definition>
+    <definition name="HFT/consultar" extends="clinica-template">
+        <put-attribute name="title" value="Procesar Hoja Farmacoterapeutica"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/clinica/hft/hftUpperConsulta.jsp" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/clinica/hft/hftScriptsConsulta.jsp" />
+    </definition>
+    <definition name="Medidas/Listar" extends="clinica-template">
+        <put-attribute name="title" value="Acciones Educativas y/o Preventivas de los Medicamentos"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/clinica/medidas/upper.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/clinica/medidas/modal.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/clinica/medidas/script.jsp" />
+    </definition>
+    <definition name="Medidas/Consultar" extends="clinica-template">
+        <put-attribute name="title" value="Consultar Medidas Educativas y/0 Preventivas de los Medicamentos"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/clinica/medidas/medidasUpper.jsp" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/clinica/medidas/medidasScriptConsultar.jsp" />
+    </definition>
+    <definition name="PRM/Listar" extends="clinica-template">
+        <put-attribute name="title" value="Registro PRM"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/clinica/prm/prmUpper.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/clinica/prm/prmModal.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/clinica/prm/prmScript.jsp" />
+    </definition>
+    <definition name="PRM/Consultar" extends="clinica-template">
+        <put-attribute name="title" value="Registro PRM"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/clinica/prm/prmUpperConsulta.jsp" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/clinica/prm/prmScriptConsulta.jsp" />
+    </definition>
+    <definition name="RAM/Procesar" extends="clinica-template">
+        <put-attribute name="title" value="Registro RAM"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/clinica/ram/ramUpper.jsp" />
+        <put-attribute name="lower-content" value="/WEB-INF/views/clinica/ram/ramLower.jsp" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/clinica/ram/ramScript.jsp" />
+    </definition>
+    <definition name="RAM/Consultar" extends="clinica-template">
+        <put-attribute name="title" value="Consulta RAM"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/clinica/ram/ramUpperConsulta.jsp" />
+        <put-attribute name="lower-content" value="" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/clinica/ram/ramScriptConsulta.jsp" />
+    </definition>
+    <definition name="Files/Listar" extends="clinica-template">
+        <put-attribute name="title" value="Registro"></put-attribute>
+        <put-attribute name="actions" value=""></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/clinica/upload/uploadUpper.jsp" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/clinica/upload/uploadScripts.jsp" />
+    </definition>
+    <definition name="Devoluciones/Listar" extends="clinica-template">
+        <put-attribute name="title" value="Registro"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/clinica/devoluciones/devolucionesUpper.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/clinica/devoluciones/devolucionesModalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/clinica/devoluciones/devolucionesScripts.jsp" />
+    </definition>
+    <definition name="Files/Error" extends="dispensacion-template">
+        <put-attribute name="title" value="Error"></put-attribute>
+        <put-attribute name="body" value=""></put-attribute>
+        <put-attribute name="actions" value=""></put-attribute>
+        <put-attribute name="breadcrumb" value=""></put-attribute>
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="upper-content" value="/WEB-INF/views/dispensacion/error/error.jsp" />
+        <put-attribute name="custom-script" value="" />
+    </definition>
+    
+    
+</tiles-definitions>

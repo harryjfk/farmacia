@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="farma-template" template="/WEB-INF/views/dispensacion/template/template.jsp" preparer="pe.gob.minsa.geniusplex.web.MenuPreparer">
+        <put-attribute name="meta" value="/WEB-INF/tiles/template_body/meta.jsp" />
+        <put-attribute name="head" value="/WEB-INF/tiles/template_body/head.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/tiles/template_body/menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/dispensacion/template/body.jsp" />
+        <put-attribute name="actions" value="/WEB-INF/views/dispensacion/template/actions.jsp" />
+        <put-attribute name="breadcrumb" value="/WEB-INF/tiles/template_body/breadcrumb.jsp" />
+        <put-attribute name="sidebar" value="/WEB-INF/tiles/template_body/sidebar.jsp" />
+        <put-attribute name="headScript" value="/WEB-INF/tiles/template_body/headScript.jsp" />
+        <put-attribute name="upper-content" value=""/>
+        <put-attribute name="modal-form" value=""/>
+        <put-attribute name="lower-content" value=""/>
+        <put-attribute name="basic-script" value="/WEB-INF/views/dispensacion/template/js/basic.js" />
+        <put-attribute name="custom-script" value="" />
+    </definition>
+    
+    <definition name="Equipo/listar" extends="farma-template">
+        <put-attribute name="title" value="Registrar equipo"></put-attribute>
+        <put-attribute name="upper-content" value="" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/farmacotecnia/equipos/equiposModal.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/farmacotecnia/equipos/equipoScript.jsp" />
+    </definition>  
+    <definition name="NotaPedido/procesar" extends="farma-template">
+        <put-attribute name="title" value="Procesar Notas de Pedido"></put-attribute>
+        <put-attribute name="custom-script" value="/WEB-INF/views/farmacotecnia/notaPedido/pedidoScript.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/farmacotecnia/notaPedido/pedido.jsp" />
+        <put-attribute name="actions" value="/WEB-INF/views/farmacotecnia/notaPedido/actions.jsp" />
+    </definition>  
+    <definition name="NotaPedido/registrar" extends="farma-template">
+        <put-attribute name="title" value="Registrar Notas de Pedido"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/farmacotecnia/notaPedido/pedidoRegistrar.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/farmacotecnia/notaPedido/pedidoFormScript.jsp" />
+        <put-attribute name="actions" value="" />
+    </definition>  
+    <definition name="NotaPedido/modificar" extends="farma-template">
+        <put-attribute name="title" value="Modificar Notas de Pedido"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/farmacotecnia/notaPedido/pedidoModificar.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/farmacotecnia/notaPedido/pedidoFormScript.jsp" />
+        <put-attribute name="actions" value="" />
+    </definition>  
+    <definition name="Ingresos/consultar" extends="farma-template">
+        <put-attribute name="title" value="Ingresos"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/farmacotecnia/consultas/ingresos.jsp" />
+        <put-attribute name="actions" value="/WEB-INF/views/farmacotecnia/consultas/ingresosAcciones.jsp" />
+    </definition>  
+    <definition name="TarjetaControlVisible/consultar" extends="farma-template">
+        <put-attribute name="title" value="Tarjeta de Control Visible"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/farmacotecnia/consultas/tarjetaControlVisible.jsp" />
+        <put-attribute name="actions" value="" />
+    </definition>  
+    <definition name="ConsumoPromedioMen/consultar" extends="farma-template">
+        <put-attribute name="title" value="Consumo Promedio Mensual"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/farmacotecnia/consultas/consumoPromedioMensual.jsp" />
+        <put-attribute name="actions" value="" />
+    </definition>  
+    <definition name="SituacionStockFarmacotecnia/consultar" extends="farma-template">
+        <put-attribute name="title" value="Situacion Stock"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/farmacotecnia/consultas/situacionStock.jsp" />
+        <put-attribute name="actions" value="" />
+    </definition>
+    <definition name="Precios/listar" extends="farma-template">
+        <put-attribute name="title" value="Registrar Precios"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/farmacotecnia/precios/preciosUpper.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/farmacotecnia/precios/preciosModal.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/farmacotecnia/precios/preciosScript.jsp" />
+    </definition>  
+    <definition name="Materias/listar" extends="farma-template">
+        <put-attribute name="title" value="Registro Materias Primas, Envases y Precios"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/farmacotecnia/precios/preciosUpper.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/farmacotecnia/precios/preciosModal.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/farmacotecnia/precios/preciosScript.jsp" />
+    </definition>  
+    <definition name="Matriz/listar" extends="farma-template">
+        <put-attribute name="title" value="Matriz de fórmula Magistral y Oficiales"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/farmacotecnia/matriz/matrizUpper.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/farmacotecnia/matriz/matrizModal.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/farmacotecnia/matriz/matrizScript.jsp" />
+    </definition>  
+    <definition name="FPreventa/procesar" extends="farma-template">
+        <put-attribute name="title" value="Gestionar Pre Ventas"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/farmacotecnia/preventa/upperContent.jsp" />
+        <put-attribute name="lower-content" value="/WEB-INF/views/farmacotecnia/preventa/lowerContent.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/farmacotecnia/preventa/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/farmacotecnia/preventa/scripts.jsp" />
+    </definition>
+    <definition name="FVenta/procesar" extends="farma-template">
+        <put-attribute name="title" value="Gestionar Ventas"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/farmacotecnia/venta/upperContent.jsp" />
+        <put-attribute name="lower-content" value="/WEB-INF/views/farmacotecnia/venta/lowerContent.jsp" />
+        <put-attribute name="modal-form" value="/WEB-INF/views/farmacotecnia/venta/modalForm.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/farmacotecnia/venta/scripts.jsp" />
+    </definition>
+    <definition name="FVenta/ticket" template="/WEB-INF/views/dispensacion/template/ventaTicket.jsp">
+        <put-attribute name="content" value="/WEB-INF/views/farmacotecnia/venta/ticket.jsp" />
+    </definition>
+    <definition name="FVenta/reportar" extends="farma-template">
+        <put-attribute name="title" value="Consultar Ventas"></put-attribute>
+        <put-attribute name="upper-content" value="/WEB-INF/views/farmacotecnia/venta/upperConsulta.jsp" />
+        <put-attribute name="lower-content" value="" />
+        <put-attribute name="modal-form" value="" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/farmacotecnia/venta/scriptConsulta.jsp" />
+    </definition>
+    <definition name="FCorteDeCaja/procesar" extends="farma-template">
+        <put-attribute name="title" value="Corte de Caja" />
+        <put-attribute name="upper-content" value="/WEB-INF/views/farmacotecnia/cortecaja/upperContent.jsp" />
+        <put-attribute name="custom-script" value="/WEB-INF/views/farmacotecnia/cortecaja/scripts.jsp" />
+        <put-attribute name="lower-content" value="/WEB-INF/views/farmacotecnia/cortecaja/lowerContent.jsp" />
+    </definition>
+</tiles-definitions>
